@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK AND PAPER SCISSORS</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body {
+        background-color: cadetblue;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1{
+        color: white;
+    }
+
+    .result{
+      
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 200px;
+    }
+
+    .result-show{
+        border: 1px solid #000;
+        width: 100%;
+        margin-top: 110px;
+        height: 200px;
+        padding: 30px;
+        color: white;
+        font-size: 22px;
+    }
+
+    img{
+        width: 80%;
+    }
+    .container{
+        display: flex;
+        gap: 40px;
+    }
+
+    .line-common {
+        border: 1px solid white;
+        width: 500px;
+        height: 550px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    input{
+        width: 400px;
+        height: 37px;
+        border-radius: 15px;
+        font-size: 17px;
+        outline: 0;
+        border: none;
+        padding: 0 10px;
+    }
+
+    button{
+        padding: 10px 15px;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+    }
+
+    #paper1-image{
+        display: none;
+    }
+
+    #scissors1-image{
+        display: none;
+    }
+
+    #rock2-image{
+        display: none;
+    }
+
+    #scissors2-image{
+        display: none;
+    }
+
+    
+</style>
+
+<body>
+    <div class="container">
+        <div class="you line-common">
+            <h1>YOU</h1>
+            <img src="" alt="" id="image1">
+            <!-- <img src="./imges/rokk-removebg-preview.png" alt="">
+            <img src="./imges/scissors-removebg-preview.png" alt=""> -->
+            <!-- <img src="./imges/rock.png" alt="rock1-image" id="rock1-image">
+            <img src="./imges/scissors.png" alt="scissors1-image" id="scissors1-image"> -->
+            <input type="text" name="" id="submit">
+            <button onclick="game()" id="btn1">Run</button>
+        </div>
+        <div class="result">
+            <h1>VERSUS</h1>
+            <div class="result-show">
+                <p>RESULT</p>
+                <h2 id="result"></h2>
+            </div>
+        </div>
+        <div class="computer line-common">
+            <h1>COMPUTER</h1>
+
+            <img src="./imges/scissors.png" alt="" id="image2">
+        </div>
+    </div>
+
+    <script>
+        function game() {
+            let image1 = document.getElementById("image1");
+            let submit = document.getElementById("submit").value;
+
+            if (submit == "paper") {
+                image1.src="./imges/paper-removebg-preview.png"
+            }
+            else if (submit == "scissors"){
+                image1.src="./imges/scissors-removebg-preview.png"
+            }
+
+            else if(submit == "rock"){
+                image1.src="./imges/rokk-removebg-preview.png"
+            }
+
+            let image2 = document.getElementById("image2");
+            let computerChoice = ["paper", "scissors" , "rock"];
+            let computerPlay = Math.floor(Math.random()*computerChoice.length);
+
+            if(computerPlay == 0){
+                image2.src="./imges/paper-removebg-preview.png"
+            }
+            else if(computerPlay == 1){
+                image2.src="./imges/scissors-removebg-preview.png"
+            }
+
+            else if(computerPlay == 2){
+                image2.src="./imges/rokk-removebg-preview.png"
+            }
+
+            let result = document.getElementById("result")
+
+            if(submit == "paper" && computerPlay == 0 || submit =="scissors" && computerPlay ==  1 || submit == "rock" && computerPlay == 2){
+                result.innerText = "It's a Tie";
+            }
+
+            else if(submit == "paper" && computerPlay == 2 || submit == "scissors" && computerPlay == 0 || submit == "rock" && computerPlay == 1){
+                result.innerText = "You won";
+            }
+
+            else if(submit == "paper" && computerPlay == 1 || submit == "scissors" && computerPlay == 2 || submit == "rock" && computerPlay == 0){
+                result.innerText = "You lose";
+
+            }
+
+
+        }
+
+        
+
+        
+
+        // let game = document.getElementById("btn1");
+        // game.addEventListener("click", gameBtn);
+        // function gameBtn() {
+        //     let result = document.getElementById("pop-result");
+        //     let submit = document.getElementById("rock").value;
+        //     let img1 = document.getElementById("paper1-image")
+            
+        // }
+        // // let playerChoice1 = document.getElementById("paper1-image");
+        
+        // // let computerChoice = ["paper", "rock", "scissors"];
+        // // let computerPlay = Math.floor(Math.random()*computerChoice.length);
+        // // let play = computerChoice[computerPlay];
+
+        // if(computerChoice == play){
+
+        //     // console.log("It;s a Tie");
+        // }
+        // else if(computerChoice != play){
+        //     console.log("You loss");
+        // }
+        // else{
+        //     console.log("You won");
+        // }
+
+        // // let input = document.getElementById("")
+    </script>
+
+</body>
+
+</html>

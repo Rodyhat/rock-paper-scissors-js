@@ -5,106 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROCK AND PAPER SCISSORS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-    body {
-        background-color: cadetblue;
-        display: flex;
-        width: 100%;
-        height: 100vh;
-        align-items: center;
-        justify-content: center;
-    }
-
-    h1 {
-        color: white;
-    }
-
-    .result {
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 200px;
-    }
-
-    .result-show {
-        border: 1px solid #000;
-        width: 100%;
-        margin-top: 110px;
-        height: 200px;
-        padding: 30px;
-        color: white;
-        font-size: 22px;
-    }
-
-    img {
-        width: 80%;
-    }
-
-    .container {
-        display: flex;
-        gap: 40px;
-    }
-
-    .line-common {
-        border: 1px solid white;
-        width: 500px;
-        height: 550px;
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    input {
-        width: 400px;
-        height: 37px;
-        border-radius: 15px;
-        font-size: 17px;
-        outline: 0;
-        border: none;
-        padding: 0 10px;
-    }
-
-    button {
-        padding: 10px 15px;
-        border-radius: 10px;
-        border: none;
-        font-size: 15px;
-    }
-
-    #paper1-image {
-        display: none;
-    }
-
-    #scissors1-image {
-        display: none;
-    }
-
-    #rock2-image {
-        display: none;
-    }
-
-    #scissors2-image {
-        display: none;
-    }
-</style>
 
 <body>
     <div class="container">
         <div class="you line-common">
             <h1>YOU</h1>
             <img src="" alt="" id="image1">
-            <input type="text" name="" id="submit">
-            <button onclick="game()" id="btn1">Run</button>
+            <div class="click-show">
+                <input type="text" name="" id="submit">
+                <div class="btn">
+                    <button onclick="game()" id="btn1">Run</button>
+                </div>
+            </div>
         </div>
         <div class="result">
             <h1>VERSUS</h1>
